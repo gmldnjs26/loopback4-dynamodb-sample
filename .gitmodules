@@ -1,0 +1,3 @@
+[submodule "lb4-connector-dynamodb"]
+	path = lb4-connector-dynamodb
+	url = https://github.com/gmldnjs26/lb4-connector-dynamodb

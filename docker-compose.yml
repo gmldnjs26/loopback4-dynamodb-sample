@@ -1,0 +1,31 @@
+version: '3'
+services:
+  server:
+    container_name: server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/home/node/app
+    depends_on:
+      - dynamodb
+  dynamodb:
+    image: amazon/dynamodb-local
+    command: -jar DynamoDBLocal.jar -sharedDb -dbPath . -optimizeDbBeforeStartup
+    ports:
+      - 8000:8000
+  aws-cli:
+    image: amazon/aws-cli
+    depends_on:
+      - dynamodb
+    volumes:
+      - ./dynamodb/init.sh:/init.sh
+    environment:
+      - AWS_ACCESS_KEY_ID=fakeaccesskey
+      - AWS_SECRET_ACCESS_KEY=fakesecretaccesskey
+      - AWS_DEFAULT_REGION=ap-northeast-1
+      - DYNAMODB_REGION=ap-northeast-1
+    entrypoint: /bin/sh
+    command: -c "sleep 5 && /init.sh"
