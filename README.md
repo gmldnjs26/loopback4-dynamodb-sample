@@ -22,3 +22,8 @@ docker-compose up
 ```
 http://localhost:3000/users/1
 ```
+
+## ETC
+
+The submodule `lb4-connector-dynamodb` is forked from the following repository and made into a submodule. <br/>
+https://github.com/sam016/lb4-connector-dynamodb
