@@ -4,8 +4,8 @@ import {juggler} from '@loopback/repository';
 const config = {
   name: 'dynamodb',
   connector: 'loopback-connector-dynamodb',
-  accessKeyId: 'fakeaccesskey',
-  secretAccessKey: 'fakesecretaccesskey',
+  accessKeyId: 'fake',
+  secretAccessKey: 'fake',
   host: 'dynamodb',
   port: 8000,
   region: 'ap-northeast-1',

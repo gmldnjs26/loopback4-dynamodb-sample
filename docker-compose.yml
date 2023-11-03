@@ -23,8 +23,8 @@ services:
     volumes:
       - ./dynamodb/init.sh:/init.sh
     environment:
-      - AWS_ACCESS_KEY_ID=fakeaccesskey
-      - AWS_SECRET_ACCESS_KEY=fakesecretaccesskey
+      - AWS_ACCESS_KEY_ID=fake
+      - AWS_SECRET_ACCESS_KEY=fake
       - AWS_DEFAULT_REGION=ap-northeast-1
       - DYNAMODB_REGION=ap-northeast-1
     entrypoint: /bin/sh
